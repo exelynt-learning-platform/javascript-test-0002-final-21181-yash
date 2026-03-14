@@ -1,0 +1,23 @@
+function fun1(n) {
+    let num = 1;
+    for (let i = 1; i <= n; i++) {
+        num = num * i;
+    }
+    return num;
+}
+
+function pattern(a, b) {
+    return fun1(a) / (fun1(b) * fun1(a - b));
+}
+
+let rows = 4;
+
+for (let i = rows; i >= 0; i--) {
+    let line = "";
+
+    for (let j = 0; j <= i; j++) {
+        line += pattern(i, j) + " ";
+    }
+
+    console.log(line);
+}
